@@ -1,0 +1,177 @@
+main {
+    width: 100%;
+    height: auto;
+
+    .bonusPoint__title {
+        background: url("../img/./bonusPoint__title.gif") no-repeat center;
+        width: 640px;
+        height: 185px;
+        margin: 0 auto;
+    }
+
+    .bonusPoint {
+        background: url("../img/bonusPoint.png") no-repeat center;
+        background-size: contain;
+        width: 941px;
+        height: 228px;
+        position: relative;
+        margin: 0 auto;
+
+        &::before {
+            background: url("../img/grid.png") no-repeat center;
+            background-size: contain;
+            content: "";
+            width: 762px;
+            height: 104px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            content: "";
+            width: 97%;
+            height: 70%;
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            border-radius: 0 40px 40px 0;
+            animation: Shiny 2s linear 0s infinite alternate-reverse forwards;
+            
+
+            @keyframes Shiny {
+                0% {
+                    box-shadow: 0px 0px 58px 13px transparent;
+                }
+                100% {
+                    box-shadow: 0px 0px 58px 13px #f2f2f2;
+                }
+            }
+        }
+
+
+        .bonusPoint__nums {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            li {
+                width: 67px;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                margin-right: 10px;
+                overflow: hidden;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                >p {
+                    text-shadow: 0px 0px 22px #69fffd;
+                    color: #ffffff;
+                    font-size: 104px;
+                    font-family: electronic;
+                }
+
+                &.flip-top {
+                    >p {
+                        animation: flip-top 1s linear 0s 1 reverse forwards;
+                    }
+
+                    @keyframes flip-top {
+                        0% {
+                            transform: translate(1)
+                        }
+
+                        20% {
+                            transform-origin: top;
+                            transform: scaleY(1);
+                        }
+
+                        95% {
+                            transform-origin: top;
+                            transform: scaleY(0.3);
+                            opacity: 1;
+                        }
+
+                        97% {
+                            transform-origin: top;
+                            transform: scaleY(0.3) translateY(-25px);
+                            opacity: 0.7;
+                        }
+
+                        100% {
+                            transform-origin: top;
+                            transform: scaleY(0.3) translateY(-25px);
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                &.flip-bottom {
+                    >p {
+                        animation: flip-bottom 1s linear 0s 1 normal forwards;
+                    }
+
+                    @keyframes flip-bottom {
+                        0% {
+                            transform: translate(1)
+                        }
+
+                        20% {
+                            transform-origin: bottom;
+                            transform: scaleY(1);
+                        }
+
+                        95% {
+                            transform-origin: bottom;
+                            transform: scaleY(0.3);
+                            opacity: 1;
+                        }
+
+                        97% {
+                            transform-origin: bottom;
+                            transform: scaleY(0.3) translateY(25px);
+                            opacity: 0.7;
+                        }
+
+                        100% {
+                            transform-origin: bottom;
+                            transform: scaleY(0.3) translateY(25px);
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bonusPoint__battery {
+            background: url("../img/battery.gif") no-repeat center;
+            background-size: contain;
+            width: 137px;
+            height: 220px;
+            position: absolute;
+            left: -40px;
+            top: 49%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .content {
+        width: auto;
+        height: auto;
+
+        >img {
+            margin: 0 auto;
+            display: block;
+            object-fit: contain;
+        }
+    }
+}
