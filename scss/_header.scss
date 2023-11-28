@@ -25,14 +25,20 @@ header {
     .style_Picker {
         width: auto;
         height: 42px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         position: absolute;
         top: 0;
         right: 20px;
 
-        &>li {
+        li {
             width: 30px;
             height: 30px;
             border-radius: 50px;
@@ -40,15 +46,17 @@ header {
             overflow: hidden;
             margin: 0 5px 0 0;
 
-            &.active {
-                border-color: #e3aa57;
-            }
-
-            &>a {
+            a {
                 width: 100%;
                 height: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
                 align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
                 text-decoration: none;
                 text-align: center;
@@ -66,9 +74,9 @@ header {
                 &.px {
                     background: linear-gradient(to right, #ff00ff 0%, #00ffff 100%);
                 }
-
+                
                 &.ball {
-                    background: #be0000;
+                    background: linear-gradient(to right, #a37125 0%, #8c0000 100%);
                 }
             }
         }
